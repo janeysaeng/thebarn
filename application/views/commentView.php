@@ -22,7 +22,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <title>The Barn CodeIgniter</title>
+    <title>The Barn Codelgniter</title>
 
   </head>
   <body>
@@ -57,7 +57,7 @@
 			    	</li>
 			  	</ul>
 			</div>
-</form>
+			</form>
 			</div>
 			
 			</nav>
@@ -97,79 +97,34 @@
 		  <div id="colTwo">
 		    <h2>Welcome to My Website</h2>
 		    <p class="byline">Posted in <a href="#" style = "color: #000000">Uncategorized</a> by Farmer on the December 8th, 2008</p>
-		    <p><strong>The Barn</strong> is a free template from Free CSS Templates released under a <a href="http://creativecommons.org/licenses/by/2.5/" style = "color: #000000">Creative Commons Attribution 2.5 License</a>. The header photo is from <a href="http://www.pdphoto.org/" style = "color: #000000"> PDPhoto.org</a>. You're free to use this template for both commercial or personal use. I only ask that you link back to <a href="http://www.mysite.com/" style = "color: #000000"> my site </a> in some way.</p>
+		    <p><strong>The Barn</strong> is a free template from Free CSS Templates released under a <a href="http://creativecommons.org/licenses/by/2.5/" style = "color: #000000">
+			Creative Commons Attribution 2.5 License</a>. 
+			The header photo is from <a href="http://www.pdphoto.org/" style = "color: #000000"> PDPhoto.org</a>. You're free to use this template for both commercial or personal use. 
+			I only ask that you link back to <a href="http://www.mysite.com/" style = "color: #000000"> my site </a> in some way.</p>
 		    <p><strong><em>Enjoy! :)</em></strong></p>
 		    <h3>Lorem Ipsum Dolorem</h3>
 		    <p class="byline">Posted in <a href="#" style = "color: #000000">Uncategorized</a> by Farmer on the December 8th, 200 </p>
 		    <p><img src="<?php echo base_url('images/img6.jpg'); ?> " alt="" width="102" height="102" class="image" /></p>
 		    <p>Sed tempus turpis vel quam molestie pulvinar. Suspendisse venenatis dolor semper ipsum. Quisque tempus erat ac mi. Aliquam semper, est nec hendrerit dignissim, ligula turpis sagittis purus, ut viverra velit eros at augue. Pellentesque mi nisi, porta eget, pharetra ac, sollicitudin sit amet, nisi. In sapien ligula lorem sollicitudin facilisis, sodales eget, tempus in, mauris. Cras risus sem, adipiscing non, convallis ac, consectetuer eu, dolor. In quam lorem ipsum dolor sit amet. Curabitur tempus aliquam nulla. Etiam eros.</p>
-            
-            <div class="container">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Add Comment/Feedback
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-            <form method="post" action="<?php echo site_url('commentController/create')?>">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Username</label>
-                <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter Username">
-            </div>
-            <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" name="message"></textarea>
-          </div>
-
-            <button type="submit" class="btn btn-primary" value="save">Submit</button>
-            </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-            </div>
+            <br>
+			
+			<form method="post" action="<?php echo site_url('commentController/create')?>">
+			<h5>Share Your Thoughts</h5>
+				<label for="exampleInputEmail1"> Username: <br><input type="text" name="username" aria-describedby="emailHelp" ><br></label>
+				<label for="message-text"> Message: <br><textarea cols="25" rows="5" name="message"></textarea></label><br>
+				<button type="submit" class="btn btn-primary" value="save">Submit</button><br>
+			</form>
+				<br>
+				<h6>All Comments</h6>
+						
+						<?php foreach($result as $row) {?>
+						<?php $row->username; ?><br>
+						<strong><?php echo $row->username;?></strong>
+						<em><?php echo $row->message; ?></em>
+						<?php } ?>
         </div>
-        </div>
-
-        <table class="table">
-        <thead class="thead-dark">
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">Username</th>
-            <th scope="col">Message</th>
-            </tr>
-        </thead>
-        <tbody>
-                <?php foreach($result as $row) {?>
-                <tr>
-                <th scope="row"><?php echo $row->id; ?></th>
-                <td><?php echo $row->username; ?></td>
-                <td><?php echo $row->message; ?></td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-    </div>
-        
-        </div>
-		  <div style="clear: both;">&nbsp;</div>
-
-          
+		  <div style="clear: both;">&nbsp;</div>     
 		</div>
-		
-		
-		
 		
 		<!-- Footer -->
 			<div id="footer">

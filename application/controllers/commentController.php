@@ -13,8 +13,16 @@ class commentController extends CI_Controller {
     }
 
     public function create() {
-        $this->commentModel->createData();
+        $isPresent = $this->commentModel->createData();
         redirect("commentController");
+        // $query = $this->db->query('SELECT username,message FROM users,comments WHERE users.id = comments.user_id');
+
+       
+        // foreach($query->result() as $row){
+        //         echo $row->username . ' ';
+        //         echo $row->message . '|||';
+        //     }
+
     }
 
     // public function edit($id) {
